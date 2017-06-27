@@ -12,6 +12,16 @@ $credentials = "user = beti password=password";
 
 $db = pg_connect( "$host $port $dbname $credentials"  );
 
+//$userid=$_REQUEST['userid'];
+
+//$cookie_name = "userid";
+//$cookie_value = "1";
+
+//setcookie( $cookie_name , $cookie_value,time() + (86400 * 30), "/");
+echo "Value of Cookie userid:";
+echo $_COOKIE["userid"];
+echo "<br />";
+$userid=$_COOKIE["userid"];
 
 if(!$db) {
     echo "Error : Unable to open database\n";
@@ -20,7 +30,7 @@ if(!$db) {
 }
 
 $sql =<<<EOF
-      SELECT * from ACCOUNTS where ID=1;
+      SELECT * from ACCOUNTS where ID=$userid;
 EOF;
 
 $ret = pg_query($db, $sql);
