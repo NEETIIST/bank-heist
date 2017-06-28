@@ -9,9 +9,17 @@
 </head>
 
 <body onload="setCookie('userid', 1, 1)">
-
-
     <a href="/beti-csrf/displayAccount.php?userid=1">Choose</a>
-</body>
 
+    <!--I had to use iframe because of some bad apache configs that doesn't run php in html-->
+    <?php include 'displayAccount.php';?>
+    <iframe name="myPHPScript" src="displayAccount.php" width="100%" frameborder="0"></iframe>
+
+    <form action="transferMoney.php" method="get">
+        Destination Account Number: <input type="text" name="user"><br>
+        Value: <input type="text" name="value"><br>
+        <input type="submit">
+    </form>
+
+</body>
 </html>
