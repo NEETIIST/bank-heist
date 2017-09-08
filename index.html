@@ -1,17 +1,132 @@
-<?php
-
 <!DOCTYPE html>
 <html lang="en">
     <script src="javascript.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://use.fontawesome.com/da114850bc.js"></script>
+
 </head>
 
-<body onload="setCookie('userid', 1, 1)">
+<body onload="setCookie('userid', 1, 1); hideAll();">
+
+    <div class="row justify-content-center align-items-center m-0 vh-20 blue">
+        <div class="col-12 text-center">
+            <h1 class="f-white">Lorem</h1>
+        </div>
+    </div>
+    <div class="row m-0 vh-80 f-black">
+        <div class="col-3">
+            <div class="row vh-40 m-0 justify-content-center align-items-center"> 
+                <div class="col-12 m-0">
+                    <form action="" method="get">
+                        <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
+                            <div class="col-12">
+                                <p class="">Login</p>
+                            </div>
+                            <div class="col-3 m-0 text-center">
+                                <i class="fa fa-2x fa-user" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-9 m-0 text-left">
+                                <input type="text" name="user" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
+                            <div class="col-3 m-0 text-center">
+                                <i class="fa fa-2x fa-key" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-9 m-0 text-left">
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="row justify-content-end align-items-center mx-0 my-2 py-1">
+                            <div class="col-3 m-0 text-center">
+                                <button type="submit" class="no-button">
+                                    <i class="fa fa-2x fa-sign-in f-black" aria-hidden="true" title="Login"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row vh-40 m-0"> 
+                <div class="col-12 m-0">
+                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp menu" id="menu_1" onclick="makeActive(this)">
+                        <div class="col-3 m-0 text-center">
+                            <i class="fa fa-2x fa-money" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-9 m-0 text-left">
+                            <span>Saldo</span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp menu" id="menu_2" onclick="makeActive(this)">
+                        <div class="col-3 m-0 text-center">
+                            <i class="fa fa-2x fa-credit-card" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-9 m-0 text-left">
+                            <span>Enviar Dinheiro</span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp menu" id="menu_3" onclick="makeActive(this)">
+                        <div class="col-3 m-0 text-center">
+                            <i class="fa fa-2x fa-exchange" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-9 m-0 text-left">
+                            <span>Ver Transferências</span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp">
+                        <div class="col-3 m-0 text-center">
+                            <i class="fa fa-2x fa-sign-in" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-9 m-0 text-left">
+                            <span>Logout</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-9 m-0 p-0">
+            <div class="display" id="opt_0">
+                <div class="row vh-80 m-0 justify-content-center align-items-center">
+                    <div class="col-12 text-center m-0">
+                        <p>Texto a explicar merdas sobre o curso</p>
+                    </div>
+                </div>
+            </div>
+            <div class="display" id="opt_1">
+                <div class="row vh-80 m-0 justify-content-center align-items-center">
+                    <div class="col-12 text-center m-0">
+                        <p>1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="display" id="opt_2">
+                <div class="row vh-80 m-0 justify-content-center align-items-center">
+                    <div class="col-12 text-center m-0">
+                        <p>2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="display" id="opt_3">
+                <div class="row vh-80 m-0 justify-content-center align-items-center">
+                    <div class="col-12 text-center m-0">
+                        <p>3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
     <a href="/beti-csrf/displayAccount.php?userid=1">Choose</a>
 
-    <!--I had to use iframe because of some bad apache configs that doesn't run php in html-->
+    
     <?php include 'displayAccount.php';?>
     <iframe name="myPHPScript" src="displayAccount.php" width="100%" frameborder="0"></iframe>
 
@@ -20,6 +135,8 @@
         Value: <input type="text" name="value"><br>
         <input type="submit">
     </form>
+
+    -->
 
 </body>
 </html>

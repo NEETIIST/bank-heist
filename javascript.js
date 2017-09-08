@@ -2,6 +2,24 @@
  * Created by Filipe on 27/06/17.
  */
 
+function makeActive(option)
+{
+    let m = option.id ;
+    let d = m.replace("menu_","opt_");
+
+    $(".menu").css("color","#1c1c1c");
+    $("#"+m).css("color","blue");
+
+    $(".display").hide();
+    $("#"+d).show();
+};
+
+function hideAll()
+{
+    $(".display").hide();
+    $("#opt_0").show();
+}
+
 function setCookie(cname,cvalue,exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -36,3 +54,5 @@ function checkCookie() {
         }
     }
 }
+
+
