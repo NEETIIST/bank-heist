@@ -18,13 +18,9 @@ $db = pg_connect( "$host $port $dbname $credentials"  );
 //$cookie_value = "1";
 
 //setcookie( $cookie_name , $cookie_value,time() + (86400 * 30), "/");
-echo "Value of Cookie userid:";
-echo $_COOKIE["userid"];
 echo "<br />";
 
-echo $_REQUEST['password'];
-$userid=$_COOKIE["userid"];
-$password=$_GET['password'];
+$user=$_COOKIE["user"];
 
 if(!$db) {
     echo "ERROR OPENING DB";
@@ -33,7 +29,7 @@ if(!$db) {
 }
 
 $sql =<<<EOF
-      SELECT * from ACCOUNTS where ID=$userid AND PASSWORD=$password;
+      SELECT * from ACCOUNTS where NAME='$user';
 EOF;
 
 $ret = pg_query($db, $sql);
@@ -42,10 +38,24 @@ if(!$ret) {
     exit;
 }
 while($row = pg_fetch_row($ret)) {
-    echo nl2br ("ID = ". $row[0] . "\n");
-    echo nl2br ("NAME = ". $row[1] ."\n");
     echo nl2br("BALANCE = ". $row[2] ."\n");
+    echo('<script type="text/javascript">location.href="/beti-csrf/index.html"+"?b="+$row[2];</script>');
 }
-echo "Operation done successfully\n";
+
+$sql =<<<EOF
+      SELECT * from TRANSFERS where account1='$user' OR account2='$user';
+EOF;
+
+$ret = pg_query($db, $sql);
+if(!$ret) {
+    echo pg_last_error($db);
+    exit;
+}
+while($row = pg_fetch_row($ret)) {
+    echo nl2br("BALANCE = ". $row[2] ."\n");
+    echo('<script type="text/javascript">location.href="/beti-csrf/index.html"+"?b="+$row[2];</script>');
+}
+
+
 pg_close($db);
 ?>

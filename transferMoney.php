@@ -19,20 +19,18 @@ if(!$db) {
 }
 
 #TODO GET those values from html
-echo "Value of Cookie userid:";
-echo $_COOKIE["userid"];
 echo "<br />";
-$user1=$_COOKIE["userid"];
+$user1=$_COOKIE["user"];
 $user=$_REQUEST['user'];
 $value=$_REQUEST['value'];
 $sql =<<<EOF
       START TRANSACTION;
       
         INSERT INTO TRANSFERS (ACCOUNT1,ACCOUNT2,VALUE)
-        VALUES ($user1, $user, $value);
+        VALUES ('$user1', '$user', $value);
       
-        UPDATE ACCOUNTS set BALANCE = BALANCE + $value where ID=$user;
-        UPDATE ACCOUNTS set BALANCE = BALANCE - $value where ID=$user1;
+        UPDATE ACCOUNTS set BALANCE = BALANCE + $value where NAME='$user';
+        UPDATE ACCOUNTS set BALANCE = BALANCE - $value where NAME='$user1';
         
       COMMIT;
 EOF;

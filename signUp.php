@@ -24,6 +24,7 @@ if(!$result) {
     echo pg_last_error($db);
     exit;
 } else {
-    echo "Conta criada com sucesso\n";
+    setcookie("user", "$name");
+    echo('<script type="text/javascript">location.href="/beti-csrf/index.html";</script>');
 }
 pg_close($db);
