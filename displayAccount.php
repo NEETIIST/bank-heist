@@ -21,16 +21,19 @@ $db = pg_connect( "$host $port $dbname $credentials"  );
 echo "Value of Cookie userid:";
 echo $_COOKIE["userid"];
 echo "<br />";
+
+echo $_REQUEST['password'];
 $userid=$_COOKIE["userid"];
+$password=$_GET['password'];
 
 if(!$db) {
-    echo "Error : Unable to open database\n";
+    echo "ERROR OPENING DB";
 } else {
-    echo "Opened database successfully\n";
+    echo("<p style='color:darkcyan'> 'Opened database successfully\n'</p>");
 }
 
 $sql =<<<EOF
-      SELECT * from ACCOUNTS where ID=$userid;
+      SELECT * from ACCOUNTS where ID=$userid AND PASSWORD=$password;
 EOF;
 
 $ret = pg_query($db, $sql);
@@ -39,9 +42,9 @@ if(!$ret) {
     exit;
 }
 while($row = pg_fetch_row($ret)) {
-    echo "ID = ". $row[0] . "\n";
-    echo "NAME = ". $row[1] ."\n";
-    echo "BALANCE = ". $row[2] ."\n";
+    echo nl2br ("ID = ". $row[0] . "\n");
+    echo nl2br ("NAME = ". $row[1] ."\n");
+    echo nl2br("BALANCE = ". $row[2] ."\n");
 }
 echo "Operation done successfully\n";
 pg_close($db);

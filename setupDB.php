@@ -34,6 +34,13 @@ $sql =<<<EOF
       created_at TIMESTAMP  NOT NULL);
 EOF;
 
+$sql =<<<EOF
+      CREATE TABLE LOGINS
+      (NAME  TEXT PRIMARY KEY    NOT NULL,
+      PASSWORD         TEXT  NOT NULL,
+      created_at TIMESTAMP  NOT NULL);
+EOF;
+
 $ret = pg_query($db, $sql);
 if(!$ret) {
     echo pg_last_error($db);
