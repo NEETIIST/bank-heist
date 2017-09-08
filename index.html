@@ -3,6 +3,7 @@
     <script src="javascript.js"></script>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -121,14 +122,41 @@
             <div class="display" id="opt_1">
                 <div class="row vh-80 m-0 justify-content-center align-items-center">
                     <div class="col-12 text-center m-0">
-                        <p></p>
+                        
                     </div>
                 </div>
             </div>
             <div class="display" id="opt_2">
                 <div class="row vh-80 m-0 justify-content-center align-items-center">
-                    <div class="col-12 text-center m-0">
-                        <p>2</p>
+                    <div class="col-6 text-center m-0">
+                        <form action="transferMoney.php" method="get" id="sendForm">
+                            <div class="row m-0 justify-content-center align-items-center">
+                                <div class="col-4 text-left">
+                                    <span>Utilizador:</span>
+                                </div>
+                                <div class="col-8 text-center">
+                                    <input type="text" name="user" placeholder="ex: jose">
+                                </div>
+                            </div>
+                            <div class="spacer-2"></div>
+                            <div class="row m-0 justify-content-center align-items-center">
+                                <div class="col-4 text-left">
+                                    <span>Valor (em €):</span>
+                                </div>
+                                <div class="col-4"></div>
+                                <div class="col-4 text-center">
+                                    <input type="number" name="value" placeholder="ex: 100" autocomplete="off">
+                                </div>
+                            </div>
+                            <div class="spacer-2"></div>
+                            <div class="row m-0 justify-content-end align-items-center">
+                                <div class="col-4 text-right">
+                                    <button type="submit" class="no-button">
+                                        <span>Enviar</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -143,7 +171,6 @@
     </div>
     <!--
     <a href="/beti-csrf/displayAccount.php?userid=1">Choose</a>
-
     
     <?php include 'displayAccount.php';?>
     <iframe name="myPHPScript" src="displayAccount.php" width="100%" frameborder="0"></iframe>
