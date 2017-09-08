@@ -14,7 +14,7 @@
 
 </head>
 
-<body onload="setCookie('userid', 1, 1); hideAll();">
+<body onload="hideAll(); isLogged(); showLogin();">
 
     <div class="row justify-content-center align-items-center m-0 vh-20 blue">
         <div class="col-12 text-center">
@@ -23,13 +23,19 @@
     </div>
     <div class="row m-0 vh-80 f-black">
         <div class="col-3">
-            <div class="row vh-40 m-0 justify-content-center align-items-center"> 
+            <div class="row vh-40 m-0 justify-content-center align-items-center" id="not_logged"> 
                 <div class="col-12 m-0">
-                    <form action="loginUser.php" method="get">
+                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
+                        <div class="col-6 text-center mb-3 cp">
+                            <span id="loginButton" onclick="showLogin()">Login</span>
+                        </div>
+                        <div class="col-6 text-center mb-3 cp">
+                            <span id="registerButton" onclick="showRegister()">Registar</span>
+                        </div>
+                    </div>
+                    <form action="" method="get" id="loginForm">
                         <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
-                            <div class="col-12">
-                                <p class="">Login</p>
-                            </div>
+                            
                             <div class="col-3 m-0 text-center">
                                 <i class="fa fa-2x fa-user" aria-hidden="true"></i>
                             </div>
@@ -48,11 +54,23 @@
                         <div class="row justify-content-end align-items-center mx-0 my-2 py-1">
                             <div class="col-3 m-0 text-center">
                                 <button type="submit" class="no-button">
-                                    <i class="fa fa-2x fa-sign-in f-black" aria-hidden="true" title="Login"></i>
+                                    <i class="fa fa-2x f-black" aria-hidden="true" title="Login" id="loginFormIcon"></i>
                                 </button>
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+            <div class="row vh-40 m-0 justify-content-center align-items-center" id="logged"> 
+                <div class="col-12 m-0">
+                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
+                        <div class="col-3 m-0 text-center">
+                            <i class="fa fa-2x fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-9 m-0 text-left">
+                            <span>Username</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row vh-40 m-0"> 
@@ -103,7 +121,7 @@
             <div class="display" id="opt_1">
                 <div class="row vh-80 m-0 justify-content-center align-items-center">
                     <div class="col-12 text-center m-0">
-                        <p>1</p>
+                        <p></p>
                     </div>
                 </div>
             </div>

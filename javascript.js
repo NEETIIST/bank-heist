@@ -20,6 +20,33 @@ function hideAll()
     $("#opt_0").show();
 }
 
+function isLogged(){
+    if ( getCookie("user") !== "" ) //User is Logged
+    {
+        $("#not_logged").hide();
+        $("#logged").show();
+    }
+    else
+    {
+        $("#not_logged").show();
+        $("#logged").hide();   
+    }
+}
+
+function showLogin(){
+    $("#loginButton").css("color","blue");
+    $("#registerButton").css("color","#1c1c1c");
+    $('#loginForm').attr('action', 'loginUser.php');
+    $('#loginFormIcon').addClass('fa-sign-in').removeClass('fa-user-plus');
+}
+
+function showRegister(){
+    $("#loginButton").css("color","#1c1c1c");
+    $("#registerButton").css("color","blue");
+    $('#loginForm').attr('action', 'signUp.php');
+    $('#loginFormIcon').addClass('fa-user-plus').removeClass('fa-sign-in');
+}
+
 function setCookie(cname,cvalue,exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -54,5 +81,3 @@ function checkCookie() {
         }
     }
 }
-
-
