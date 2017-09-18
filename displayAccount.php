@@ -38,12 +38,13 @@ if(!$ret) {
     exit;
 }
 while($row = pg_fetch_row($ret)) {
-    echo nl2br("BALANCE = ". $row[2] ."\n");
+    echo nl2br("Saldo = ". $row[2] ."\n");
     echo('<script type="text/javascript">location.href="/beti-csrf/index.html"+"?b="+$row[2];</script>');
 }
 
+//Ver movimentos
 $sql =<<<EOF
-      SELECT * from TRANSFERS where account1='$user' OR account2='$user';
+      SELECT * from TRANSFERS where account1='$user' OR account2='$user' ORDER BY created_at;
 EOF;
 
 $ret = pg_query($db, $sql);
@@ -52,8 +53,13 @@ if(!$ret) {
     exit;
 }
 while($row = pg_fetch_row($ret)) {
-    echo nl2br("BALANCE = ". $row[2] ."\n");
-    echo('<script type="text/javascript">location.href="/beti-csrf/index.html"+"?b="+$row[2];</script>');
+    if ($row[1]==$user){
+        echo nl2br("Entidade = ". $row[2] . " Valor: " . " - " . $row[3] . "€ Data: " . $row[4] . "\n");
+        echo('<script type="text/javascript">location.href="/beti-csrf/index.html"+"?b="+$row[2];</script>');
+    }elseif ($row[2]==$user){
+        echo nl2br("Entidade = ". $row[1] . " Valor: " . " + " . $row[3] . "€ Data: " . $row[4] . "\n");
+        echo('<script type="text/javascript">location.href="/beti-csrf/index.html"+"?b="+$row[2];</script>');
+    }
 }
 
 
