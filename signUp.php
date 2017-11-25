@@ -22,6 +22,6 @@ if(!$result) {
     exit;
 } else {
     setcookie("user", "$name");
-    echo('<script type="text/javascript">location.href="/beti-csrf/index.html";</script>');
+    echo('<script type="text/javascript">location.href="index.html";</script>');
 }
 pg_close($db);

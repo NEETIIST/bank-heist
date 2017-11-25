@@ -39,6 +39,6 @@ if(!$ret) {
 }
 
 //echo "Operation done successfully\n";
-echo('<script type="text/javascript">alert("Transferência feita com sucesso");location.href="/beti-csrf/index.html";</script>');
+echo('<script type="text/javascript">alert("Transferência feita com sucesso");location.href="index.html";</script>');
 pg_close($db);
 ?>
