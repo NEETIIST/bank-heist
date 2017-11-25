@@ -22,6 +22,6 @@ if(pg_num_rows($result) != 1) {
 } else {
     // user logged in
     setcookie("user", "$name");
-    echo('<script type="text/javascript">location.href="/beti-csrf-example/index.html";</script>');
+    echo('<script type="text/javascript">location.href="index.html";</script>');
 }
 pg_close($db);
