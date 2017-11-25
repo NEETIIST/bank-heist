@@ -45,11 +45,15 @@ $port        = "port = 5432";
 $dbname      = "dbname = beti_db";
 $credentials = "user = beti password=password";
 
-$db = pg_connect( "$host $port $dbname $credentials"  );
-if(!$db) {
-    echo "Error : Unable to open database\n";
-} else {
-    echo "Opened database successfully\n";
+function pg_connection_string() {
+    return "dbname = beti_db host = 127.0.0.1 port = 5432 user = beti password=password";
 }
+
+//$db = pg_connect( pg_connection_string() );
+//if(!$db) {
+//    echo "Error : Unable to open database\n";
+//} else {
+//    echo "Opened database successfully\n";
+//}
 
 ?>

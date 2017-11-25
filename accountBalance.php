@@ -5,12 +5,9 @@
  * Date: 27/06/17
  * Time: 19:01
  */
-$host        = "host = 127.0.0.1";
-$port        = "port = 5432";
-$dbname      = "dbname = beti_db";
-$credentials = "user = beti password=password";
+require 'dbConnect.php';
 
-$db = pg_connect( "$host $port $dbname $credentials"  );
+$db = pg_connect( pg_connection_string()  );
 
 //$userid=$_REQUEST['userid'];
 
