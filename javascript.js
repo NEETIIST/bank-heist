@@ -131,3 +131,16 @@ function getTransfers()
         }
     );
 }
+
+function music() {
+    $(document).ready(function() {
+        var audioElement = document.createElement('audio');
+        audioElement.setAttribute('src', 'sound.mp3');
+        audioElement.setAttribute('autoplay', 'autoplay');
+        //audioElement.load()
+        $.get();
+            audioElement.addEventListener("load", function() {
+            audioElement.play();
+        }, true);
+    });
+}

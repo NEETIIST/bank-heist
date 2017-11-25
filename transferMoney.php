@@ -15,11 +15,10 @@ $db = pg_connect( "$host $port $dbname $credentials"  );
 if(!$db) {
     echo "Error : Unable to open database\n";
 } else {
-    echo "Opened database successfully\n";
+    //echo "Opened database successfully\n";
 }
 
 #TODO GET those values from html
-echo "<br />";
 $user1=$_COOKIE["user"];
 $user=$_REQUEST['user'];
 $value=$_REQUEST['value'];
@@ -39,23 +38,10 @@ if(!$ret) {
     echo pg_last_error($db);
     exit;
 } else {
-    echo "Record updated successfully\n";
+    //echo "Record updated successfully\n";
 }
 
-$sql =<<<EOF
-      SELECT * from ACCOUNTS;
-EOF;
-
-$ret = pg_query($db, $sql);
-if(!$ret) {
-    echo pg_last_error($db);
-    exit;
-}
-while($row = pg_fetch_row($ret)) {
-    echo "ID = ". $row[0] . "\n";
-    echo "NAME = ". $row[1] ."\n";
-    echo "BALANCE = ". $row[2] ."\n";
-}
-echo "Operation done successfully\n";
+//echo "Operation done successfully\n";
+echo('<script type="text/javascript">alert("Transferência feita com sucesso");location.href="/beti-csrf/index.html";</script>');
 pg_close($db);
 ?>
