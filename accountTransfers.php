@@ -28,7 +28,7 @@ if(!$db) {
 
 //Ver movimentos
 $sql =<<<EOF
-      SELECT * from TRANSFERS where account1='$user' OR account2='$user' ORDER BY created_at;
+      SELECT * from TRANSFERS where account1='$user' OR account2='$user' ORDER BY created_at DESC;
 EOF;
 
 $ret = pg_query($db, $sql);
