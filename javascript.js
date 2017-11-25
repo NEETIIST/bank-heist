@@ -8,7 +8,7 @@ function makeActive(option)
     let d = m.replace("menu_","opt_");
 
     $(".menu").css("color","#1c1c1c");
-    $("#"+m).css("color","blue");
+    $("#"+m).css("color","#1976D2");
 
     $(".display").hide();
     $("#"+d).show();
@@ -23,29 +23,32 @@ function hideAll()
 function isLogged(){
     if ( getCookie("user") !== "" ) //User is Logged
     {
-        $("#not_logged").hide();
-        $("#logged").show();
+        $(".not_logged").hide();
+        $(".logged").show();
         $("#loggedUser").text(getCookie("user"));
     }
     else
     {
-        $("#not_logged").show();
-        $("#logged").hide();   
+        $(".not_logged").show();
+        $(".logged").hide();   
     }
 }
 
 function showLogin(){
-    $("#loginButton").css("color","blue");
+    $("#loginButton").css("color","#1976D2");
     $("#registerButton").css("color","#1c1c1c");
     $('#loginForm').attr('action', 'loginUser.php');
-    $('#loginFormIcon').addClass('fa-sign-in').removeClass('fa-user-plus');
+    $('#loginFormText').text("Entrar >");
+    //$('#loginFormIcon').addClass('fa-sign-in').removeClass('fa-user-plus');
+
 }
 
 function showRegister(){
     $("#loginButton").css("color","#1c1c1c");
-    $("#registerButton").css("color","blue");
+    $("#registerButton").css("color","#1976D2");
     $('#loginForm').attr('action', 'signUp.php');
-    $('#loginFormIcon').addClass('fa-user-plus').removeClass('fa-sign-in');
+    $('#loginFormText').text("Criar conta >");
+    //$('#loginFormIcon').addClass('fa-user-plus').removeClass('fa-sign-in');
 }
 
 function setCookie(cname,cvalue,exdays) {
@@ -92,4 +95,32 @@ function deleteAllCookies() {
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
     }
+}
+
+/* AJAX */
+
+function getBalance()
+{
+    $.post(                             //call the server
+        "accountBalance.php",{}                     //At this url
+    ).done(                             //And when it's done
+        function(data)
+        {
+            // Might need retouches
+            $('#balance').html(data);  //Update here with the response
+        }
+    );
+}
+
+function getTransfers()
+{
+    $.post(                             //call the server
+        "accountTransfers.php",{}                     //At this url
+    ).done(                             //And when it's done
+        function(data)
+        {
+            // Might need retouches
+            //$('#balance').html(data);  //Update here with the response
+        }
+    );
 }

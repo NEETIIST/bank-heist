@@ -15,121 +15,31 @@
 
 </head>
 
-<body onload="hideAll(); isLogged(); showLogin();">
+    <body onload="hideAll(); showLogin(); isLogged();">
 
-    <div class="row justify-content-center align-items-center m-0 vh-20 blue">
-        <div class="col-12 text-center">
-            <h1 class="f-white">Lorem</h1>
-        </div>
-    </div>
-    <div class="row m-0 vh-80 f-black">
-        <div class="col-3">
-            <div class="row vh-40 m-0 justify-content-center align-items-center" id="not_logged"> 
-                <div class="col-12 m-0">
-                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
-                        <div class="col-6 text-center mb-3 cp">
-                            <span id="loginButton" onclick="showLogin()">Login</span>
-                        </div>
-                        <div class="col-6 text-center mb-3 cp">
-                            <span id="registerButton" onclick="showRegister()">Registar</span>
-                        </div>
-                    </div>
-                    <form action="" method="get" id="loginForm">
-                        <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
-                            
-                            <div class="col-3 m-0 text-center">
-                                <i class="fa fa-2x fa-user" aria-hidden="true"></i>
-                            </div>
-                            <div class="col-9 m-0 text-left">
-                                <input type="text" name="user" placeholder="Username">
-                            </div>
-                        </div>
-                        <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
-                            <div class="col-3 m-0 text-center">
-                                <i class="fa fa-2x fa-key" aria-hidden="true"></i>
-                            </div>
-                            <div class="col-9 m-0 text-left">
-                                <input type="password" name="password" placeholder="Password">
-                            </div>
-                        </div>
-                        <div class="row justify-content-end align-items-center mx-0 my-2 py-1">
-                            <div class="col-3 m-0 text-center">
-                                <button type="submit" class="no-button">
-                                    <i class="fa fa-2x f-black" aria-hidden="true" title="Login" id="loginFormIcon"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+        <div class="row m-0 justify-content-center vh-15 align-items-center dark-primary-color f-white nav">
+            <div class="col-9 text-center">
+                <span class="fs-5">Banco BETI</span>
             </div>
-            <div class="row vh-40 m-0 justify-content-center align-items-center" id="logged"> 
-                <div class="col-12 m-0">
-                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
-                        <div class="col-3 m-0 text-center">
-                            <i class="fa fa-2x fa-user" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-9 m-0 text-left">
-                            <span id="loggedUser">Username</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row vh-40 m-0"> 
-                <div class="col-12 m-0">
-                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp menu" id="menu_1" onclick="makeActive(this)">
-                        <div class="col-3 m-0 text-center">
-                            <i class="fa fa-2x fa-money" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-9 m-0 text-left">
-                            <span>Saldo</span>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp menu" id="menu_2" onclick="makeActive(this)">
-                        <div class="col-3 m-0 text-center">
-                            <i class="fa fa-2x fa-credit-card" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-9 m-0 text-left">
-                            <span>Enviar Dinheiro</span>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp menu" id="menu_3" onclick="makeActive(this)">
-                        <div class="col-3 m-0 text-center">
-                            <i class="fa fa-2x fa-exchange" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-9 m-0 text-left">
-                            <span>Ver Transferências</span>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp" onclick="deleteAllCookies();isLogged()">
-                        <div class="col-3 m-0 text-center">
-                            <i class="fa fa-2x fa-sign-in" aria-hidden="true"></i>
-                        </div>
-                        <div class="col-9 m-0 text-left">
-                            <span>Logout</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-3 text-center">
+                <a href="#"><i class="fa fa-2x fa-globe px-2 cp" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-2x fa-envelope-o px-2 cp" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-2x fa-facebook-square px-2 cp" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-2x fa-instagram px-2 cp" aria-hidden="true"></i></a>
             </div>
         </div>
-        <div class="col-9 m-0 p-0">
-            <div class="display" id="opt_0">
-                <div class="row vh-80 m-0 justify-content-center align-items-center">
-                    <div class="col-12 text-center m-0">
-                        <p>Texto a explicar merdas sobre o curso</p>
+
+        <div class="row m-0 justify-content-center align-items-center f-black">
+            <div class="col-9 text-center p-0">
+                <div class="row m-0 vh-70 justify-content-center align-items-center">
+                    <div class="col-12 display" id="opt_0">
+                        <span>Tab Content 0</span>
                     </div>
-                </div>
-            </div>
-            <div class="display" id="opt_1">
-                <div class="row vh-80 m-0 justify-content-center align-items-center">
-                    <div class="col-12 text-center m-0">
-                        <?php include 'displayAccount.php';?>
-                        <iframe name="myPHPScript" src="displayAccount.php" width="100%" height="100%" frameborder="0"></iframe>
+                    <div class="col-12 display" id="opt_1">
+                        <span class="fs-5">O teu saldo de conta é: </span>
+                        <span class="fs-5" id="balance">-</span>
                     </div>
-                </div>
-            </div>
-            <div class="display" id="opt_2">
-                <div class="row vh-80 m-0 justify-content-center align-items-center">
-                    <div class="col-6 text-center m-0">
+                    <div class="col-6 display" id="opt_2">
                         <form action="transferMoney.php" method="get" id="sendForm">
                             <div class="row m-0 justify-content-center align-items-center">
                                 <div class="col-4 text-left">
@@ -150,39 +60,110 @@
                                 </div>
                             </div>
                             <div class="spacer-2"></div>
-                            <div class="row m-0 justify-content-end align-items-center">
+                            <div class="row mx-0 mt-3 justify-content-end align-items-center">
                                 <div class="col-4 text-right">
                                     <button type="submit" class="no-button">
-                                        <span>Enviar</span>
+                                        <span>Transferir ></span>
                                     </button>
                                 </div>
                             </div>
                         </form>
                     </div>
+                    <div class="col-10 display" id="opt_3">
+                        <p class="fs-4 text-left">Os seus movimentos:</p>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Remetente</th>
+                                    <th class="text-center">Destinatário</th>
+                                    <th class="text-right">Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody id="transfers"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <div class="display" id="opt_3">
-                <div class="row vh-80 m-0 justify-content-center align-items-center">
-                    <div class="col-12 text-center m-0">
-                        <p>3</p>
+            <div class="col-3 text-center vh-85 accent-color side">
+                <div class="row justify-content-center align-items-center mx-0 mt-2 vh-10 not_logged">
+                    <div class="col-6 text-center cp" id="loginButton" onclick="showLogin()">
+                        <span>Login</span>
+                    </div>
+                    <div class="col-6 text-center cp" id="registerButton" onclick="showRegister()">
+                        <span>Registar</span>
+                    </div>
+                </div>
+                <form action="" method="get" id="loginForm" class="not_logged">
+                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
+                        
+                        <div class="col-3 m-0 text-center">
+                            <i class="fa fa-2x fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-9 m-0 text-left">
+                            <input type="text" name="user" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center mx-0 my-2 py-1">
+                        <div class="col-3 m-0 text-center">
+                            <i class="fa fa-2x fa-key" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-9 m-0 text-left">
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="row justify-content-end align-items-center mx-0 my-2 py-1">
+                        <div class="col-6 m-0 text-right">
+                            <button type="submit" class="no-button">
+                                <span id="loginFormText">-</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="row justify-content-center align-items-center mx-0 mt-3 mb-2 py-1 logged">
+                    <div class="col-3 m-0 text-center">
+                        <i class="fa fa-2x fa-user" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-9 m-0 text-left">
+                        <span>Bem-vindo @</span><span id="loggedUser">Username</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp menu logged" id="menu_1" onclick="makeActive(this); getBalance()">
+                    <div class="col-3 m-0 text-center">
+                        <i class="fa fa-2x fa-money" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-9 m-0 text-left">
+                        <span>Ver Saldo</span>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp menu logged" id="menu_2" onclick="makeActive(this)">
+                    <div class="col-3 m-0 text-center">
+                        <i class="fa fa-2x fa-credit-card" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-9 m-0 text-left">
+                        <span>Fazer Transferência</span>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp menu logged" id="menu_3" onclick="makeActive(this); getTransfers();">
+                    <div class="col-3 m-0 text-center">
+                        <i class="fa fa-2x fa-exchange" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-9 m-0 text-left">
+                        <span>Ver Movimentos</span>
+                    </div>
+                </div>
+                <div class="row justify-content-center align-items-center mx-0 my-2 py-1 cp logged" onclick="deleteAllCookies();isLogged(); hideAll();">
+                    <div class="col-3 m-0 text-center">
+                        <i class="fa fa-2x fa-sign-in" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-9 m-0 text-left">
+                        <span>Sair</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--
-    <a href="/beti-csrf/displayAccount.php?userid=1">Choose</a>
-    
-    <?php include 'displayAccount.php';?>
-    <iframe name="myPHPScript" src="displayAccount.php" width="100%" frameborder="0"></iframe>
 
-    <form action="transferMoney.php" method="get">
-        Destination Account Number: <input type="text" name="user"><br>
-        Value: <input type="text" name="value"><br>
-        <input type="submit">
-    </form>
 
-    -->
+    </body>
 
-</body>
 </html>
