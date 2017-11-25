@@ -37,11 +37,12 @@ if(!$ret) {
     exit;
 }
 while($row = pg_fetch_row($ret)) {
+    $date = date_create($row[4]);
     if ($row[1]==$user){
-        echo("<tr><td>".$row[4]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td class='text-right'>".$row[3]." €</td></tr>");
+        echo("<tr><td>".date_format($date, 'Y-m-d H:i')."</td><td>".$row[1]."</td><td>".$row[2]."</td><td class='text-right'>".$row[3]." €</td></tr>");
         //echo("<script>".$row[4].".slice(0,indexOf('.');</script>");
     }elseif ($row[2]==$user){
-        echo("<tr><td>".$row[4]."</td><td>".$row[1]."</td><td>".$row[2]."</td><td class='text-right'>".$row[3]." €</td></tr>");
+        echo("<tr><td>".date_format($date, 'Y-m-d H:i')."</td><td>".$row[1]."</td><td>".$row[2]."</td><td class='text-right'>".$row[3]." €</td></tr>");
     }
 
 }
