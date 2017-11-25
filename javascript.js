@@ -101,12 +101,15 @@ function deleteAllCookies() {
 
 function getBalance()
 {
+    $('.loading').show();
+    $('#balanceHolder').hide();
     $.post(                             //call the server
         "accountBalance.php",{}                     //At this url
     ).done(                             //And when it's done
         function(data)
         {
-            // Might need retouches
+            $('.loading').hide();
+            $('#balanceHolder').show();
             $('#balance').html(data);  //Update here with the response
         }
     );
@@ -114,13 +117,17 @@ function getBalance()
 
 function getTransfers()
 {
+    $('.loading').show();
+    $('#transfers').hide();
+    $('#transfers tr').remove();
     $.post(                             //call the server
         "accountTransfers.php",{}                     //At this url
     ).done(                             //And when it's done
         function(data)
         {
-            // Might need retouches
-            //$('#balance').html(data);  //Update here with the response
+            $('.loading').hide();
+            $('#transfers').show();
+            $('#transfers').append(data);  //Update here with the response
         }
     );
 }
