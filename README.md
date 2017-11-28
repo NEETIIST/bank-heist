@@ -4,7 +4,7 @@ https://beti-csrf.herokuapp.com
 
 Módulo de segurança. Demonstração de uma ataque do tipo "cross site request forgery" e vantagens do HTTPS em relação ao HTTP.
 
-##Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -17,7 +17,7 @@ Módulo de segurança. Demonstração de uma ataque do tipo "cross site request 
 - In dbConnect.php change the connection string to your localhost settings
 
 
-##Usage
+## Usage
 
 - Create two accounts
 - Transfer money between them for test purposes
