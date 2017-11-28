@@ -23,9 +23,11 @@ Módulo de segurança. Demonstração de uma ataque do tipo "cross site request 
 - Transfer money between them for test purposes
 
 - Login with one of them (user1)
-- Open the following link with user2 -> http://beti-csrf.herokuapp.com/transferMoney.php?user=user2&value=150
+- Open the following link with user2 -> https://beti-csrf.herokuapp.com/transferMoney.php?user=user2&value=150
 
 - The value you specified will be transfered from user1 to user2
+
+- To reset DB open -> https://beti-csrf.herokuapp.com/resetDB.php
 
 ## Authors
 
