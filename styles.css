@@ -126,3 +126,10 @@ input[type=submit] {
     font: inherit;
     cursor: pointer;
 }
+
+#logo
+{
+    height: 15vh;
+    width: auto;
+    padding: 1em;
+}
