@@ -17,10 +17,10 @@ if(!$db) {
 }
 
 #TODO GET those values from html
-#$user1=$_COOKIE["user"];
-#$user=$_REQUEST['user'];
-#$value=$_REQUEST['value'];
-#$code=$_REQUEST['code'];
+$user1=$_COOKIE["user"];
+$user=$_REQUEST['user'];
+$value=$_REQUEST['value'];
+$code=$_REQUEST['code'];
 #TODO check if works:
 
 #$checksum=$_REQUEST['checksum'];
@@ -29,12 +29,12 @@ echo $alpha[1];
 
 
 
-$user1="filipe";
-$user="valadas";
-$value=10;
+#$user1="filipe";
+#$user="valadas";
+#$value=10;
 #$valueString=(string)$value;
 $valueString=$value;
-echo "Value pos:".$valueString[0]."\n";
+#echo "Value pos:".$valueString[0]."\n";
 $numlength = strlen((string)$value);
 $toLetters="";
 $add="";
@@ -42,10 +42,10 @@ $i=0;
 
 for ($i = 0; $i <= $numlength; $i++) {
     $add=$alpha[$valueString[$i]];
-    echo "ADD:".$add."\n";
+    #echo "ADD:".$add."\n";
     $toLetters .= $alpha[$valueString[$i]];
 }
-echo "toletters:".$toLetters."\n";
+#echo "toletters:".$toLetters."\n";
 $cipher= encrypt($user1,"$toLetters");
 
 /*echo "\n";
