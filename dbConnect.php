@@ -41,8 +41,8 @@
 //}
 
 function pg_connection_string() {
-    return "dbname = bankheist_db host = 127.0.0.1 port = 5432 user = bankheist password=password";
-    //return getenv('connString');;
+    //return "dbname = bankheist_db host = 127.0.0.1 port = 5432 user = bankheist password=password";
+    return getenv('connString');;
 }
 
 
