@@ -7,6 +7,7 @@
  */
 
 require 'dbConnect.php';
+require 'vigenere.php';
 
 $db = pg_connect( pg_connection_string()  );
 if(!$db) {
@@ -16,10 +17,45 @@ if(!$db) {
 }
 
 #TODO GET those values from html
-$user1=$_COOKIE["user"];
-$user=$_REQUEST['user'];
-$value=$_REQUEST['value'];
-$sql =<<<EOF
+#$user1=$_COOKIE["user"];
+#$user=$_REQUEST['user'];
+#$value=$_REQUEST['value'];
+#$code=$_REQUEST['code'];
+#TODO check if works:
+
+#$checksum=$_REQUEST['checksum'];
+$alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+echo $alpha[1];
+
+
+
+$user1="filipe";
+$user="valadas";
+$value=10;
+#$valueString=(string)$value;
+$valueString=$value;
+echo "Value pos:".$valueString[0]."\n";
+$numlength = strlen((string)$value);
+$toLetters="";
+$add="";
+$i=0;
+
+for ($i = 0; $i <= $numlength; $i++) {
+    $add=$alpha[$valueString[$i]];
+    echo "ADD:".$add."\n";
+    $toLetters .= $alpha[$valueString[$i]];
+}
+echo "toletters:".$toLetters."\n";
+$cipher= encrypt($user1,"$toLetters");
+
+/*echo "\n";
+echo "User: " . $user . "\n";
+echo "User1: ".$user1."\n";
+echo "Value:".$value."\n";
+echo "Cipher:".$cipher."\n";*/
+
+if ($code==$cipher){
+    $sql =<<<EOF
       START TRANSACTION;
       
         INSERT INTO TRANSFERS (ACCOUNT1,ACCOUNT2,VALUE)
@@ -30,6 +66,10 @@ $sql =<<<EOF
         
       COMMIT;
 EOF;
+}else{
+    echo('<script type="text/javascript">alert("Codigo errado");location.href="index.html";</script>');
+}
+
 $ret = pg_query($db, $sql);
 if(!$ret) {
     echo pg_last_error($db);
