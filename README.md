@@ -1,4 +1,4 @@
-# beti-csrf-example
+# beti-heist-example
 
 https://beti-heist.herokuapp.com
 
@@ -24,13 +24,13 @@ Módulo de segurança. Demonstração de uma ataque do tipo "cross site request 
 
 - Login with one of them (user1)
 
-- Open the following link with user2* -> https://beti-csrf.herokuapp.com/transferMoney.php?user=user2&value=10&code=GI
+- Open the following link with user2* -> https://beti-heist.herokuapp.com/transferMoney.php?user=user2&value=10&code=GI
 
 - The value you specified will be transfered from user1 to user2
 
-- To reset DB open -> https://beti-csrf.herokuapp.com/resetDB.php
+- To reset DB open -> https://beti-heist.herokuapp.com/resetDB.php
 
-- *code is a vigenere cipher of the amount to be transfered, this amount needs to be previously converted to the corresponding string of the alphabet. Ex. A=0, B=1, C=2, etc.; they key of the cipher is the logfed username
+- *code is a vigenere cipher of the amount to be transfered, this amount needs to be previously converted to the corresponding string of the alphabet. Ex. A=0, B=1, C=2, etc.; they key of the cipher is the logged username
 
 ## Authors
 
